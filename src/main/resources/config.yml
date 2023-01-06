@@ -1,0 +1,64 @@
+language: "zh_CN"
+
+enable_tablist: true
+
+using_database: false
+database:
+  host: localhost
+  user: root
+  password: 123456
+  port: 3306
+  database: bwbs
+
+#=Seconds that will be considered as a kill assistant.(by second)
+assist_time: 20
+
+
+#===Set the score given by some events.Set them to 0 to disable.ONLY INTEGER SUPPORT
+#==onPlayerEvents
+#=How many points will give for 1 damage caused
+onplayerhit_damage: 1
+#=How many points will give for kill 1 player
+onplayerhit_kill: 10
+#=give for kill assistants.
+onplayerhit_killassist: 5
+#==onBlock
+#=points will give for break specific block
+onblockbreaks:
+  #spigot name.
+  #if the item is contains in the droplist,it will also gain points.For example:
+  #COBBLESTONE for 1 and also STONE will for 1
+  SANDSTONE: 1
+  WOOL: 1
+  ENDER_CHEST: 30
+  END_STONE: 5
+  CHEST: 10
+  GLASS: 1
+  IRON_BLOCK: 5
+  OBSIDIAN: 50
+
+
+  #BED: 100 (You are NOT NEEDED to set bed here if you use bedwarsrel ;
+#=for place specific block
+onblockplace:
+  SANDSTONE: 1
+  WOOL: 1
+  ENDER_CHEST: 20
+  END_STONE: 3
+  CHEST: 5
+  GLASS: 10
+  IRON_BLOCK: 3
+  OBSIDIAN: 40
+#==onEat
+#=for eat 1 objects
+oneat:
+  POTION: 10
+  GOLDEN_APPLE: 5
+
+
+#=points will give for break targetblock in BedwarsRel
+onbedbroke: 1000
+
+#ignore this
+debug: false
+

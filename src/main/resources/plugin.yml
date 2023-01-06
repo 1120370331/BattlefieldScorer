@@ -1,0 +1,23 @@
+name: BattlefieldScorer
+version: '1.0.0'
+main: just_a_09.battlefieldscorer.BattlefieldScorer
+api-version: 1.19
+authors: [ just_a_09 ]
+description: A plugin that score the point when players have done something like BattleField,Now supports BedwarsRel
+softdepend:
+  - BedwarsRel
+  - PlaceholderAPI
+commands:
+  battlefieldscorer:
+    description: Main Command
+    usage: /<command>
+    permission: battlefieldscorer.base
+    aliases:
+      - bfs
+permissions:
+  battlefieldscorer.base:
+    description: Using basic command for users.
+    default: true
+  battlefieldscorer.admin:
+    description: Using admin commands.
+    default: op
