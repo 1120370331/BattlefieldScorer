@@ -17,6 +17,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.inventory.ItemStack;
@@ -272,5 +273,10 @@ public class onPlayerEvents implements Listener{
             }
 
         }
+    }
+    @EventHandler
+    public void onPlayerDead(PlayerDeathEvent playerDeathEvent){
+        Player player = (Player) playerDeathEvent.getEntity();
+        BattlefieldScorer.getInstance().dataManager.addActive(player.getName(), DataManager.PlayerDataKeys.DeathTimes, 1);
     }
 }
